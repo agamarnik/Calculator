@@ -26,6 +26,11 @@ class ViewController: UIViewController {
         resultLabel.text = sender.currentTitle
     }
     
+    @IBAction func acPressed(_ sender: UIButton) {
+        resultLabel.text = "0"
+    }
+    
+    
     
     
 

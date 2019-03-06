@@ -64,8 +64,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func acPressed(_ sender: UIButton) {
-        resultLabel.text = "0"
+        resultLabel.text = ""
         canClear = true
+    }
+    
+    @IBAction func percent(_ sender: UIButton) {
+        var number1 = Double(resultLabel.text!)
+        
+        number1 = number1!/100.0
+        
+        resultLabel.text = String(number1!)
     }
     
     func calculate() -> Double {

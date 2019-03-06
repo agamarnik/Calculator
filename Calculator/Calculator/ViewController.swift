@@ -31,6 +31,10 @@ class ViewController: UIViewController {
     
     @IBAction func btnNumberClicked(_ sender: UIButton) {
         //resultLabel.text = sender.currentTitle
+        if canClear {
+            resultLabel.text = ""
+            canClear = false
+        }
         let currentText = resultLabel.text!
         let textLabel = sender.titleLabel?.text
         if let text = textLabel {
@@ -65,16 +69,21 @@ class ViewController: UIViewController {
     
     @IBAction func acPressed(_ sender: UIButton) {
         resultLabel.text = ""
-        canClear = true
+        canClear = false
     }
     
     @IBAction func percent(_ sender: UIButton) {
         var number1 = Double(resultLabel.text!)
-        
         number1 = number1!/100.0
-        
         resultLabel.text = String(number1!)
     }
+    
+    @IBAction func negative(_ sender: UIButton) {
+        var num = Double(resultLabel.text!)
+        num = -num!
+        resultLabel.text = String(num!)
+    }
+    
     
     func calculate() -> Double {
         let firstNumber = Double(firstNumberText)!
